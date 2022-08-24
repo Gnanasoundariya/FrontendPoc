@@ -29,4 +29,11 @@ export class StudentListComponent implements OnInit {
     this.router.navigate(['student-details', id]);
   }
 
+  deleteStudent(id:number){
+    this.studentService.deleteStudent(id).subscribe( (data: any) => {
+      console.log(data);
+      this.getStudents();
+    })
+  }
+
 }

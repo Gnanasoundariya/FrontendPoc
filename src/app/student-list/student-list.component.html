@@ -15,6 +15,7 @@
             <td> {{ student.department }} </td>
             <td>
                 <button (click) = "StudentDetails(student.id)" class = "btn btn-info" style="margin-left: 10px"> View</button>
+                <button (click) = "deleteStudent(student.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
             </td>
         </tr>
     </tbody>
