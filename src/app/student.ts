@@ -3,4 +3,6 @@ export class Student {
     firstName: any;
     lastName: any;
     department: any;
+    libraryId: any;
+    bookName:any;
 }

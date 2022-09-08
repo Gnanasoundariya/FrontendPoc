@@ -1,0 +1,15 @@
+<h2> Book List</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th> Book Id</th>
+            <th> Book Name </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let library of libraries">
+            <td> {{ library.libraryId }} </td>
+            <td> {{ library.bookName }} </td>
+        </tr>
+    </tbody>
+</table>

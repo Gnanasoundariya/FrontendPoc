@@ -1,0 +1,14 @@
+<div class="col-md-6 offset-md-3">
+    <h3> Add Book </h3>
+    <form (ngSubmit)="saveBook()">
+
+        <div class="form-group">
+            <label> Book Name</label>
+            <input type="text" class="form-control" id="bookName" [(ngModel)]="library.bookName" name="bookName">
+        </div>
+        <div style="position: absolute;top:250px">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+
+    </form>
+</div>

@@ -1,22 +1,47 @@
 <h2> Student List</h2>
-<table class = "table table-striped">
+<nav class="navbar">
+    <div class="input-group">
+        <input class="form-control border-end-0 border rounded-pill" type="search" name="bookName"
+            [(ngModel)]="bookName" (ngModelChange)="search()" placeholder="Enter the Book Name to Search">
+        <span class="input-group-append">
+            <button class="btn btn-outline-secondary bg-white border-bottom-0 border rounded-pill ms-n5" type="button">
+                <i class="fa fa-search"></i>
+            </button>
+        </span>
+    </div>
+</nav>
+<table class="table table-striped">
     <thead>
         <tr>
             <th> First Name</th>
             <th> Last Name </th>
             <th> Department</th>
+            <th>Book Name</th>
             <th> Actions </th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor = "let student of students" >
+        <tr *ngFor="let student of students">
             <td> {{ student.firstName }} </td>
             <td> {{ student.lastName }} </td>
             <td> {{ student.department }} </td>
+            <td> {{student.bookName}}</td>
             <td>
-                <button (click) = "StudentDetails(student.id)" class = "btn btn-info" style="margin-left: 10px"> View</button>
-                <button (click) = "deleteStudent(student.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                <span data-hover="Edit" class="hovertext">
+                    <img (click)="updateStudent(student.id)" src="assets/edit.png" style="width: 35px;height:35px" />
+                </span>
+                <span data-hover="View" class="hovertext">
+                    <img (click)="StudentDetails(student.id)" src="assets/eye.png"
+                        style="margin-left: 10px;width: 35px;height:35px" />
+                </span>
+                <span data-hover="Delete" class="hovertext">
+                    <img src="assets/delete.png" mwlConfirmationPopover [popoverTitle]="popoverTitle"
+                        [popoverMessage]="popoverMessage" placement="left" (confirm)="deleteStudent(student.id)"
+                        (cancel)="cancelClicked = true" style="margin-left: 10px;width: 45px;height:45px" />
+                </span>
             </td>
         </tr>
     </tbody>
 </table>
+<p *ngIf="!students.length" style="color: red;text-align: center;">No Record Found!</p>
+

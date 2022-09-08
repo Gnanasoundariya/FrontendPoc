@@ -1,5 +1,5 @@
 <div class="col-md-6 offset-md-3">
-    <h3> Create Student </h3>
+    <h3> Update Student </h3>
     <form (ngSubmit)="onSubmit()">
 
         <div class="form-group">
@@ -13,20 +13,19 @@
         </div>
 
         <div class="form-group">
-            <label> Department</label>
+            <label>Department</label>
             <input type="text" class="form-control" id="department" [(ngModel)]="student.department" name="department">
         </div>
         <div class="form-group">
             <label>Book Name</label>
-            <select class="form-control form-select" id="bookName" name="bookName"
+            <select class="form-control form-select" id="bookName" [(ngModel)]="student.libraryId" name="bookName"
                 (change)="onSelectBook($event)">
-                <option value="">--Select--</option>
+                <option>--Select--</option>
                 <option *ngFor="let item of bookNameList" [value]="item.libraryId">{{item.bookName}}</option>
             </select>
         </div>
         <div style="position: absolute;top:480px">
-            <button class="btn btn-primary" type="submit">Submit</button>
+            <button class="btn btn-success" type="submit">Submit</button>
         </div>
-
     </form>
 </div>

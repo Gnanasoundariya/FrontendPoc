@@ -14,6 +14,12 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
+    "paths": {
+      "s": [
+        "dist/s/s",
+        "dist/s"
+      ]
+    },
     "target": "es2017",
     "module": "es2020",
     "lib": [

@@ -1,21 +1,29 @@
-<nav class="navbar navbar-expand-sm bg-success navbar-dark">
-  <h2 style="color: white;white-space: nowrap;"><img src="assets/spring.png" style="width: 80px;height:50px"/>SpringBoot  + <img src="assets/angular.png" style="width: 70px;height:40px"/> Angular</h2>
-  <ul class = "navbar-nav" style="padding-left: 1139px;white-space: nowrap;">
-      <li class = "nav-item">
-          <a routerLink="students" routerLinkActive="active" class="nav-link" >Student List</a>
-      </li>
-      <li class = "nav-item">
-          <a routerLink="create-student" routerLinkActive="active" class="nav-link" >Add Student</a>
-      </li>
+<nav class="navbar navbar-expand-sm navbar-dark" style="background: linear-gradient(to bottom, #006600 0%, #339900 100%);">
+  <h2 style="color: white;white-space: nowrap;"><img src="assets/spring.png"
+      style="width: 80px;height:50px" />SpringBoot + <img src="assets/angular.png" style="width: 70px;height:40px" />
+    Angular</h2>
+  <ul class="navbar-nav" style="padding-left: 979px;white-space: nowrap;">
+    <li class="nav-item">
+      <a routerLink="students" routerLinkActive="active" class="nav-link">Student List</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="create-student" routerLinkActive="active" class="nav-link">Add Student</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="add-book" routerLinkActive="active" class="nav-link">Add Book</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="book-list" routerLinkActive="active" class="nav-link">Book List</a>
+    </li>
   </ul>
 </nav>
 
 <h1 class="text-center"> Student Information </h1>
-<div class = "container">
+<div class="container">
   <router-outlet></router-outlet>
 </div>
-<footer class = "footer">
-  <div class = "container">
-      <span>Soundariya@Poc using springboot and Angular</span>
+<footer class="footer">
+  <div class="container">
+    <span>Soundariya@Poc using springboot and Angular</span>
   </div>
 </footer>

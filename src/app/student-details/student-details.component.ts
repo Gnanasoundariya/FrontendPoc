@@ -12,14 +12,17 @@ export class StudentDetailsComponent implements OnInit {
 
   id!: number;
   student: Student = new Student;
+  result:any;
   constructor(private route: ActivatedRoute, private studentService: StudentService) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
-
     this.student = new Student();
-    this.studentService.getStudentById(this.id).subscribe( (data: Student) => {
-      this.student = data;
+
+    //get the student list by id
+    this.studentService.getStudentById(this.id).subscribe((data: Student) => {
+      this.result = data;
+      this.student = this.result['studentListId'][0]; 
     });
   }
 }
